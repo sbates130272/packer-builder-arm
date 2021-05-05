@@ -55,9 +55,18 @@ git clone https://github.com/mkaczanowski/packer-builder-arm
 cd packer-builder-arm
 go mod download
 go build
-
+```
+You can then run the local packer templates using something like:
+```
 sudo packer build boards/odroid-u3/archlinuxarm.json
 ```
+Alternatively if you wish to use this plugin in other projects you can
+add the path to the ```packer-builder-arm``` interpreter to your
+PACKER_PLUGIN_PATH environment variable or install the interpreter in
+your ```~/.packer.d/plugins``` folder. See [this
+link][https://www.packer.io/docs/plugins] for more information on
+plugin install paths.
+
 ## Run in Docker
 This method is primarily for macOS users where is no native way to use qemu-user-static (or Linux users, who do not want to setup packer and all the tools).
 ### Usage via container from Docker Hub:
